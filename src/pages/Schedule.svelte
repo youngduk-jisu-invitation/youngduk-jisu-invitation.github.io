@@ -130,35 +130,37 @@
 
     .map-buttons {
         display: flex;
-        gap: 8px;
+        gap: 6px;
         margin-top: 20px;
         justify-content: center;
         align-items: center;
         width: 100%;
+        flex-wrap: nowrap;
     }
 
     .map-btn {
         flex: 1;
-        padding: 10px 14px;
+        padding: 8px 8px;
         border: 2px solid #d4956f;
         border-radius: 6px;
         background: white;
-        font-size: 12px;
+        font-size: 11px;
         cursor: pointer;
         transition: all 0.2s ease;
         font-weight: 500;
         text-decoration: none;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 6px;
+        gap: 3px;
         color: #d4956f;
+        min-width: 0;
     }
 
     .map-icon {
-        width: 24px;
-        height: 24px;
+        width: 20px;
+        height: 20px;
         flex-shrink: 0;
         object-fit: contain;
     }
