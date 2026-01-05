@@ -18,7 +18,7 @@
             </div>
             <span class="heart">💕</span>
             <div class="bride-side">
-                <p class="parents">오종찬·윤정숙 딸</p>
+                <p class="parents">오종찬·윤장숙 딸</p>
                 <p class="name">오 지 수</p>
             </div>
         </div>
