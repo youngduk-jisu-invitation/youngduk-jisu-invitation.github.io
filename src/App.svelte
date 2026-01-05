@@ -99,10 +99,7 @@
 
     <section id="gift" class="section">
         <h2>Gift</h2>
-        <p>
-            마음 전하실 곳
-            섹션ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ
-        </p>
+        <p>마음 전하실 곳 섹션</p>
     </section>
 
     <section id="ending" class="section">
