@@ -45,7 +45,7 @@
 
     .ending-image {
         width: 100%;
-        max-width: 250px;
+        max-width: 350px;
         aspect-ratio: 1;
         border-radius: 10px;
         overflow: hidden;
@@ -96,6 +96,10 @@
     @media (min-width: 768px) {
         .ending-content {
             max-width: 100%;
+        }
+
+        .ending-image {
+            max-width: 500px;
         }
     }
 </style>

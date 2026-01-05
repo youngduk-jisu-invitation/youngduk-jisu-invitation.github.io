@@ -56,7 +56,13 @@
 
     .greeting-couple {
         width: 100%;
-        max-width: 250px;
+        max-width: 350px;
+    }
+
+    @media (min-width: 768px) {
+        .greeting-couple {
+            max-width: 500px;
+        }
     }
 
     .couple-info img {

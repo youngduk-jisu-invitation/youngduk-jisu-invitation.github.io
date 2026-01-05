@@ -87,4 +87,10 @@
         margin: 0;
         max-width: 300px;
     }
+
+    @media (min-width: 768px) {
+        .cover-image {
+            max-width: 550px;
+        }
+    }
 </style>
