@@ -97,7 +97,7 @@
     }
 
     .time-value {
-        font-size: 48px;
+        font-size: 40px;
         font-weight: 600;
         color: #d4956f;
         line-height: 1;
@@ -110,7 +110,7 @@
     }
 
     .time-separator {
-        font-size: 32px;
+        font-size: 28px;
         color: #d4956f;
         margin: 0 4px;
         font-weight: 300;
@@ -124,7 +124,7 @@
 
     @media (min-width: 768px) {
         .time-value {
-            font-size: 56px;
+            font-size: 48px;
         }
     }
 </style>
