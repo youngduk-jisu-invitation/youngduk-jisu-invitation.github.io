@@ -6,7 +6,9 @@
         <h2 class="gift-title">마음 전하실 곳</h2>
 
         <div class="gift-info">
-            <p class="gift-message">따뜻한 축하의 마음을 전하고 싶으시다면 아래 계좌로 축의금을 보내주세요.</p>
+            <p class="gift-message">
+                따뜻한 축하의 마음을 전하고 싶으시다면 아래 계좌로 축의금을 보내주세요.
+            </p>
 
             <div class="account-list">
                 <div class="account-item">

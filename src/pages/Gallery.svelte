@@ -1,11 +1,40 @@
 <script>
+    import { onMount } from 'svelte';
+
     let currentPage = 0;
     let selectedImage = null;
+    let modalRef;
     const imagesPerPage = 9;
-    let galleryImages = [];
+    let galleryImages = [
+        // 갤러리 이미지 목록 (실제 이미지는 public/images/gallery에 저장)
+        // 이미지 파일명: 1.jpg, 2.jpg, 3.jpg ... 등
+    ];
 
-    // 갤러리 이미지 로드 (실제로는 public/images/gallery에서 로드)
-    // 나중에 동적으로 이미지를 로드할 수 있도록 설정
+    // 갤러리 이미지 동적 로드
+    async function loadGalleryImages() {
+        try {
+            // public/images/gallery 폴더의 이미지 목록을 동적으로 로드
+            // 실제 구현 시 메타데이터 파일이 필요하거나, 서버에서 파일 목록을 제공해야 함
+            // 현재는 예시 구조로 설정 (사용자가 이미지 추가 시 업데이트)
+            const imageCount = 31; // 갤러리에 있는 이미지 개수
+            for (let i = 1; i <= imageCount; i++) {
+                galleryImages.push({
+                    id: i,
+                    src: `/images/gallery/${i}.jpg`,
+                    alt: `갤러리 이미지 ${i}`,
+                });
+            }
+            galleryImages = galleryImages; // 반응성 업데이트
+        } catch (error) {
+            console.error('갤러리 이미지 로드 실패:', error);
+        }
+    }
+
+    // 컴포넌트 마운트 시 이미지 로드
+    onMount(() => {
+        loadGalleryImages();
+    });
+
     $: totalPages = Math.ceil(galleryImages.length / imagesPerPage);
     $: visibleImages = galleryImages.slice(
         currentPage * imagesPerPage,
@@ -26,10 +55,12 @@
 
     function openModal(image) {
         selectedImage = image;
+        setTimeout(() => modalRef?.showModal(), 0);
     }
 
     function closeModal() {
         selectedImage = null;
+        modalRef?.close();
     }
 </script>
 
@@ -42,9 +73,14 @@
                 <p class="no-images">갤러리 이미지가 없습니다.</p>
             {:else}
                 {#each visibleImages as image (image.id)}
-                    <div class="gallery-item" on:click={() => openModal(image)}>
+                    <button
+                        type="button"
+                        class="gallery-item"
+                        on:click={() => openModal(image)}
+                        aria-label="{image.alt} 확대보기"
+                    >
                         <img src={image.src} alt={image.alt} />
-                    </div>
+                    </button>
                 {/each}
             {/if}
         </div>
@@ -53,21 +89,23 @@
             <div class="gallery-pagination">
                 <button on:click={prevPage} disabled={currentPage === 0}>←</button>
                 <span>{currentPage + 1} / {totalPages}</span>
-                <button on:click={nextPage} disabled={currentPage === totalPages - 1}
-                    >→</button
-                >
+                <button on:click={nextPage} disabled={currentPage === totalPages - 1}>→</button>
             </div>
         {/if}
     </div>
 </section>
 
 {#if selectedImage}
-    <div class="modal-overlay" on:click={closeModal}>
-        <div class="modal-content" on:click={(e) => e.stopPropagation()}>
-            <button class="modal-close" on:click={closeModal}>✕</button>
+    <dialog
+        bind:this={modalRef}
+        class="modal-overlay"
+        on:close={closeModal}
+    >
+        <div class="modal-content">
+            <button class="modal-close" on:click={closeModal} aria-label="닫기">✕</button>
             <img src={selectedImage.src} alt={selectedImage.alt} />
         </div>
-    </div>
+    </dialog>
 {/if}
 
 <style>
@@ -92,6 +130,13 @@
         gap: 12px;
         width: 100%;
         max-width: 450px;
+        min-height: 450px;
+    }
+
+    @media (min-width: 768px) {
+        .gallery-grid {
+            min-height: 736px;
+        }
     }
 
     .gallery-item {
@@ -100,6 +145,10 @@
         overflow: hidden;
         cursor: pointer;
         transition: transform 0.3s ease;
+        background: none;
+        border: none;
+        padding: 0;
+        font: inherit;
     }
 
     .gallery-item:hover {
@@ -153,17 +202,21 @@
     }
 
     /* Modal Styles */
+    :global(html:has(dialog[open])) {
+        overflow: hidden;
+    }
+
     .modal-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.7);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 1000;
+        max-width: 90vw;
+        max-height: 90vh;
+        border: none;
+        border-radius: 8px;
+        padding: 0;
+        background: white;
+    }
+
+    .modal-overlay::backdrop {
+        background: rgba(0, 0, 0, 0.7);
     }
 
     .modal-content {

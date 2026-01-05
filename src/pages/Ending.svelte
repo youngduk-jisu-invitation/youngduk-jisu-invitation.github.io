@@ -15,9 +15,7 @@
             진심으로 감사드립니다.
         </p>
 
-        <p class="ending-closing">
-            앞으로도 서로를 소중히 여기며 행복하게 살아가겠습니다.
-        </p>
+        <p class="ending-closing">앞으로도 서로를 소중히 여기며 행복하게 살아가겠습니다.</p>
 
         <div class="ending-signature">
             <p>영덕과 지수 올림</p>
