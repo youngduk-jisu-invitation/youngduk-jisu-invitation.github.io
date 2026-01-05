@@ -10,32 +10,52 @@
             <p class="venue">KDW 웨딩 마이더스홀</p>
         </div>
 
-        <div class="location-preview">
-            <h3 class="location-title">Location</h3>
+        <div class="map-preview">
+            <img src="/images/location-map.png" alt="강동역에서 KDW 웨딩 위치 지도" />
+        </div>
 
-            <div class="map-preview">
-                <p>강동역 ⊙---------- KDW 웨딩</p>
-            </div>
+        <div class="location-info">
+            <p><strong>주소</strong></p>
+            <p>서울 강동구 천호대로 1102 KDW 웨딩 마이더스홀</p>
 
-            <div class="address-info">
-                <p><strong>주소</strong></p>
-                <p>서울 강동구 천호대로 1102 KDW 웨딩</p>
+            <p><strong>찾아오는 길</strong></p>
+            <p>강동역 3번 출구 바로 앞</p>
 
-                <p><strong>찾아오는 길</strong></p>
-                <p>강동역 3번 출구 바로 앞</p>
+            <p><strong>버스</strong></p>
+            <p>130, 341, 342, 370, 3214, 3316</p>
 
-                <p><strong>버스</strong></p>
-                <p>130, 341, 342, 370, 3214, 3316</p>
+            <p><strong>주차</strong></p>
+            <p>웨딩홀 지하 1층~3층 (1시간 30분 무료 주차)</p>
+        </div>
 
-                <p><strong>주차</strong></p>
-                <p>웨딩홀 지하 1층~3층 (1시간 30분 무료 주차)</p>
-            </div>
-
-            <div class="map-buttons">
-                <button class="map-btn naver">네이버지도</button>
-                <button class="map-btn kakao">카카오네비</button>
-                <button class="map-btn tmap">티맵</button>
-            </div>
+        <div class="map-buttons">
+            <a
+                href="https://map.naver.com/index.nhn?query=KDW웨딩"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="map-btn naver"
+            >
+                <img src="/images/navermap-icon.png" alt="네이버지도 아이콘" class="map-icon" />
+                <span>네이버지도</span>
+            </a>
+            <a
+                href="https://map.kakao.com/?urlLevel=3&q=KDW웨딩"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="map-btn kakao"
+            >
+                <img src="/images/kakao-icon.png" alt="카카오네비 아이콘" class="map-icon" />
+                <span>카카오네비</span>
+            </a>
+            <a
+                href="https://tmap.life/0c5de346"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="map-btn tmap"
+            >
+                <img src="/images/tmap-icon.png" alt="티맵 아이콘" class="map-icon" />
+                <span>티맵</span>
+            </a>
         </div>
     </div>
 </section>
@@ -74,101 +94,96 @@
         margin: 0;
     }
 
-    .location-preview {
-        width: 100%;
-        padding: 24px;
-        border-top: 1px solid #eee;
-        border-bottom: 1px solid #eee;
-    }
-
-    .location-title {
-        font-size: 20px;
-        font-weight: 300;
-        color: #d4956f;
-        margin: 0 0 16px 0;
-        text-align: center;
-    }
-
     .map-preview {
-        background: #f5f5f5;
-        padding: 16px;
-        border-radius: 6px;
-        text-align: center;
-        font-size: 13px;
-        color: #666;
-        margin-bottom: 16px;
+        width: 100%;
+        max-width: 400px;
+        margin: 24px 0;
     }
 
-    .address-info {
+    .map-preview img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .location-info {
+        width: 100%;
         font-size: 12px;
         color: #666;
         line-height: 1.8;
     }
 
-    .address-info p {
+    .location-info p {
         margin: 8px 0;
     }
 
-    .address-info strong {
+    .location-info strong {
         color: #333;
         display: block;
         margin-top: 12px;
         font-weight: 600;
     }
 
-    .address-info p:first-child strong {
+    .location-info p:first-child strong {
         margin-top: 0;
     }
 
     .map-buttons {
         display: flex;
-        gap: 10px;
+        gap: 8px;
         margin-top: 20px;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
     }
 
     .map-btn {
         flex: 1;
-        padding: 12px 16px;
-        border: 1px solid #ddd;
+        padding: 10px 14px;
+        border: 2px solid #d4956f;
         border-radius: 6px;
         background: white;
         font-size: 12px;
         cursor: pointer;
         transition: all 0.2s ease;
         font-weight: 500;
+        text-decoration: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        color: #d4956f;
+    }
+
+    .map-icon {
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+        object-fit: contain;
     }
 
     .map-btn:hover {
-        border-color: #d4956f;
-        color: #d4956f;
-        background-color: #fff5f0;
+        background-color: #ffe4d6;
+        transform: translateY(-2px);
     }
 
     .map-btn.naver {
-        border-color: #00c73c;
-        color: #00c73c;
     }
 
     .map-btn.naver:hover {
-        background-color: #f0fff0;
     }
 
     .map-btn.kakao {
-        border-color: #ffe600;
-        color: #333;
     }
 
     .map-btn.kakao:hover {
-        background-color: #fffef0;
     }
 
     .map-btn.tmap {
-        border-color: #ff6b00;
-        color: #ff6b00;
     }
 
     .map-btn.tmap:hover {
-        background-color: #fff5f0;
     }
 
     @media (min-width: 768px) {

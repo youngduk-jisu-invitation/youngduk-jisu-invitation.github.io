@@ -21,11 +21,13 @@
     .main-section {
         background: linear-gradient(135deg, #fff5e6 0%, #ffe4d6 100%);
         padding: 40px 20px;
+        min-height: 100vh;
+        justify-content: center;
     }
 
     @media (min-width: 768px) {
         .main-section {
-            min-height: auto;
+            min-height: 100vh;
             padding: 80px 40px;
         }
     }

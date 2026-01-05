@@ -13,7 +13,7 @@
 
         <div class="greeting-names">
             <div class="groom-side">
-                <p class="parents">박은선·오혜숙 아들</p>
+                <p class="parents">박용선·오혜숙 아들</p>
                 <p class="name">박 영 덕</p>
             </div>
             <span class="heart">💕</span>

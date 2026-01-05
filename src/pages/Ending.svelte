@@ -26,6 +26,12 @@
 <style>
     .ending-section {
         background: linear-gradient(135deg, #fff5e6 0%, #ffe4d6 100%);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 100px 32px;
     }
 
     .ending-content {

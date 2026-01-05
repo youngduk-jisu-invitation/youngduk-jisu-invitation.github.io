@@ -6,7 +6,6 @@
     import Gallery from './pages/Gallery.svelte';
     import Schedule from './pages/Schedule.svelte';
     import Countdown from './pages/Countdown.svelte';
-    import Location from './pages/Location.svelte';
     import Gift from './pages/Gift.svelte';
     import Ending from './pages/Ending.svelte';
     import './styles/global.css';
@@ -22,7 +21,6 @@
         { id: 'gallery', label: '갤러리' },
         { id: 'schedule', label: '예식 일시' },
         { id: 'countdown', label: '남은 시간' },
-        { id: 'location', label: '예식 장소' },
         { id: 'gift', label: '마음 전하실 곳' },
         { id: 'ending', label: '마무리' },
     ];
@@ -77,7 +75,6 @@
     <Gallery />
     <Schedule />
     <Countdown />
-    <Location />
     <Gift />
     <Ending />
 </main>

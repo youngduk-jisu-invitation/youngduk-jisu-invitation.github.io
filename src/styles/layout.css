@@ -18,6 +18,7 @@
 /* 헤더 마진 */
 main {
     margin-top: 60px;
+    box-shadow: 2px 0 4px rgba(212, 149, 111, 0.08), -2px 0 4px rgba(212, 149, 111, 0.08);
 }
 
 /* 컨테이너 */
@@ -36,6 +37,7 @@ main {
     justify-content: flex-start;
     align-items: center;
     padding: 100px var(--spacing-xl);
+    position: relative;
 }
 
 /* 미디어 쿼리 - 태블릿 이상 */
