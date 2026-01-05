@@ -30,19 +30,18 @@ main {
 /* 섹션 기본 스타일 */
 .section {
     width: 100%;
-    min-height: 100vh;
+    min-height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    padding: var(--spacing-xl);
+    padding: 100px var(--spacing-xl);
 }
 
 /* 미디어 쿼리 - 태블릿 이상 */
 @media (min-width: 768px) {
-    :root {
-        --max-width: 90%;
-        --max-width-container: 800px;
+    .section {
+        padding: 150px var(--spacing-xl);
     }
 
     body {

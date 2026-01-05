@@ -1,5 +1,14 @@
 <script>
     import Header from './components/Header.svelte';
+    import MainCover from './pages/MainCover.svelte';
+    import Quote from './pages/Quote.svelte';
+    import Greeting from './pages/Greeting.svelte';
+    import Gallery from './pages/Gallery.svelte';
+    import Schedule from './pages/Schedule.svelte';
+    import Countdown from './pages/Countdown.svelte';
+    import Location from './pages/Location.svelte';
+    import Gift from './pages/Gift.svelte';
+    import Ending from './pages/Ending.svelte';
     import './styles/global.css';
     import './styles/layout.css';
 
@@ -62,50 +71,15 @@
 </nav>
 
 <main class="container">
-    <section id="main" class="section main-section">
-        <h1>Main Cover</h1>
-        <p>메인 커버 섹션</p>
-    </section>
-
-    <section id="quote" class="section">
-        <h2>Quote</h2>
-        <p>글귀 섹션</p>
-    </section>
-
-    <section id="greeting" class="section">
-        <h2>Greeting</h2>
-        <p>인사말 섹션</p>
-    </section>
-
-    <section id="gallery" class="section">
-        <h2>Gallery</h2>
-        <p>갤러리 섹션</p>
-    </section>
-
-    <section id="schedule" class="section">
-        <h2>Schedule</h2>
-        <p>예식 일시 섹션</p>
-    </section>
-
-    <section id="countdown" class="section">
-        <h2>Countdown</h2>
-        <p>남은 시간 섹션</p>
-    </section>
-
-    <section id="location" class="section">
-        <h2>Location</h2>
-        <p>예식 장소 섹션</p>
-    </section>
-
-    <section id="gift" class="section">
-        <h2>Gift</h2>
-        <p>마음 전하실 곳 섹션</p>
-    </section>
-
-    <section id="ending" class="section">
-        <h2>Ending</h2>
-        <p>마무리 섹션</p>
-    </section>
+    <MainCover />
+    <Quote />
+    <Greeting />
+    <Gallery />
+    <Schedule />
+    <Countdown />
+    <Location />
+    <Gift />
+    <Ending />
 </main>
 
 <style>
@@ -117,7 +91,6 @@
     .container {
         max-width: 480px;
         margin: 0 auto;
-        padding-bottom: 2rem;
     }
 
     @media (min-width: 768px) {
@@ -187,26 +160,5 @@
         background-color: #ffe4d6;
         color: #d4956f;
         font-weight: 500;
-    }
-
-    .section {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 40px 20px;
-        border-bottom: 1px solid #eee;
-    }
-
-    @media (min-width: 768px) {
-        .section {
-            min-height: auto;
-            padding: 80px 40px;
-        }
-    }
-
-    .main-section {
-        background: linear-gradient(135deg, #fff5e6 0%, #ffe4d6 100%);
     }
 </style>
