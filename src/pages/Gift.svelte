@@ -1,4 +1,35 @@
 <script>
+    let expandedSide = null;
+    let copiedAccount = null;
+
+    const giftData = {
+        groom: [
+            { relationship: '신랑', name: '박영덕', account: '하나은행 123-456789-01' },
+            { relationship: '신랑 아버지', name: '박용선', account: '하나은행 123-456789-02' },
+            { relationship: '신랑 어머니', name: '오혜숙', account: '하나은행 123-456789-03' },
+        ],
+        bride: [
+            { relationship: '신부', name: '오지수', account: '우리은행 987-654321-01' },
+            { relationship: '신부 아버지', name: '오종찬', account: '우리은행 987-654321-02' },
+            { relationship: '신부 어머니', name: '이순희', account: '우리은행 987-654321-03' },
+        ],
+    };
+
+    function toggleSide(side) {
+        expandedSide = expandedSide === side ? null : side;
+    }
+
+    async function copyToClipboard(account) {
+        try {
+            await navigator.clipboard.writeText(account);
+            copiedAccount = account;
+            setTimeout(() => {
+                copiedAccount = null;
+            }, 2000);
+        } catch (err) {
+            console.error('복사 실패:', err);
+        }
+    }
 </script>
 
 <section id="gift" class="section">
@@ -7,20 +38,47 @@
 
         <div class="gift-info">
             <p class="gift-message">
-                따뜻한 축하의 마음을 전하고 싶으시다면 아래 계좌로 축의금을 보내주세요.
+                따뜻한 축하의 마음을 전하고 싶으시다면 아래 신랑/신부측을 선택해주세요.
             </p>
 
-            <div class="account-list">
-                <div class="account-item">
-                    <p class="account-holder">신랑 박영덕</p>
-                    <p class="account-number">하나은행 123-456789-01</p>
-                </div>
-
-                <div class="account-item">
-                    <p class="account-holder">신부 오지수</p>
-                    <p class="account-number">우리은행 987-654321-01</p>
-                </div>
+            <div class="button-group">
+                <button
+                    class="side-button {expandedSide === 'groom' ? 'active' : ''}"
+                    on:click={() => toggleSide('groom')}
+                >
+                    신랑측
+                    <span class="dropdown-icon {expandedSide === 'groom' ? 'open' : ''}">▼</span>
+                </button>
+                <button
+                    class="side-button {expandedSide === 'bride' ? 'active' : ''}"
+                    on:click={() => toggleSide('bride')}
+                >
+                    신부측
+                    <span class="dropdown-icon {expandedSide === 'bride' ? 'open' : ''}">▼</span>
+                </button>
             </div>
+
+            {#if expandedSide}
+                <div class="account-list">
+                    {#each giftData[expandedSide] as person (person.name)}
+                        <div class="account-item">
+                            <p class="account-relationship">{person.relationship}</p>
+                            <p class="account-holder">{person.name}</p>
+                            <div class="account-row">
+                                <p class="account-number">{person.account}</p>
+                                <button
+                                    class="copy-button {copiedAccount === person.account
+                                        ? 'copied'
+                                        : ''}"
+                                    on:click={() => copyToClipboard(person.account)}
+                                >
+                                    {copiedAccount === person.account ? '✓ 복사됨' : '복사'}
+                                </button>
+                            </div>
+                        </div>
+                    {/each}
+                </div>
+            {/if}
 
             <p class="gift-note">
                 계좌 이체 시 송금자명에 신분증상의 이름을 기입하여 주시면 감사하겠습니다.
@@ -56,15 +114,71 @@
     .gift-message {
         font-size: 13px;
         color: #666;
-        margin: 0 0 16px 0;
+        margin: 0 0 20px 0;
         line-height: 1.6;
+    }
+
+    .button-group {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .side-button {
+        flex: 1;
+        padding: 12px 16px;
+        border: 2px solid #d4956f;
+        border-radius: 6px;
+        background: white;
+        color: #d4956f;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .side-button:hover {
+        background-color: #ffe4d6;
+    }
+
+    .side-button.active {
+        background-color: #d4956f;
+        color: white;
+    }
+
+    .dropdown-icon {
+        font-size: 12px;
+        transition: transform 0.3s ease;
+        display: inline-block;
+    }
+
+    .dropdown-icon.open {
+        transform: rotate(180deg);
     }
 
     .account-list {
         display: flex;
         flex-direction: column;
         gap: 12px;
-        margin-bottom: 16px;
+        margin-bottom: 20px;
+        animation: expandDown 0.4s ease-out forwards;
+    }
+
+    @keyframes expandDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+            max-height: 0;
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+            max-height: 500px;
+        }
     }
 
     .account-item {
@@ -74,11 +188,27 @@
         border: 1px solid #eee;
     }
 
+    .account-relationship {
+        font-size: 11px;
+        color: #999;
+        margin: 0 0 4px 0;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
     .account-holder {
         font-size: 13px;
         font-weight: 600;
         color: #333;
-        margin: 0 0 4px 0;
+        margin: 0 0 6px 0;
+    }
+
+    .account-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        justify-content: space-between;
     }
 
     .account-number {
@@ -86,6 +216,31 @@
         color: #d4956f;
         margin: 0;
         font-family: 'Courier New', monospace;
+        flex: 1;
+        line-height: 1.4;
+    }
+
+    .copy-button {
+        padding: 6px 10px;
+        border: 1px solid #d4956f;
+        border-radius: 4px;
+        background: white;
+        color: #d4956f;
+        font-size: 11px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        white-space: nowrap;
+    }
+
+    .copy-button:hover {
+        background-color: #ffe4d6;
+    }
+
+    .copy-button.copied {
+        background-color: #d4956f;
+        color: white;
+        border-color: #d4956f;
     }
 
     .gift-note {
