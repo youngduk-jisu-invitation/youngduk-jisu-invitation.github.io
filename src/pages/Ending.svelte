@@ -73,7 +73,7 @@
     }
 
     .ending-closing {
-        font-size: 13px;
+        font-size: 12px;
         color: #666;
         line-height: 1.6;
         margin: 0;
