@@ -5,6 +5,8 @@
     let selectedImageIndex = null;
     let modalRef;
     let touchStartX = 0;
+    let imageKey = 0; // 이미지 변경 감지용
+    let slideDirection = null; // 'next' 또는 'prev'
     const imagesPerPage = 9;
     let galleryImages = [
         // 갤러리 이미지 목록 (실제 이미지는 public/images/gallery에 저장)
@@ -56,6 +58,7 @@
 
     function openModal(imageIndex) {
         selectedImageIndex = imageIndex;
+        imageKey = imageIndex;
         setTimeout(() => modalRef?.showModal(), 0);
     }
 
@@ -66,14 +69,18 @@
 
     function nextModalImage() {
         if (selectedImageIndex !== null) {
+            slideDirection = 'next';
             selectedImageIndex = (selectedImageIndex + 1) % galleryImages.length;
+            imageKey++;
         }
     }
 
     function prevModalImage() {
         if (selectedImageIndex !== null) {
+            slideDirection = 'prev';
             selectedImageIndex =
                 (selectedImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            imageKey--;
         }
     }
 
@@ -150,10 +157,15 @@
         on:touchend={handleTouchEnd}
     >
         <div class="modal-content">
-            <img
-                src={galleryImages[selectedImageIndex].src}
-                alt={galleryImages[selectedImageIndex].alt}
-            />
+            {#key imageKey}
+                <img
+                    src={galleryImages[selectedImageIndex].src}
+                    alt={galleryImages[selectedImageIndex].alt}
+                    class="modal-image"
+                    class:slide-in-left={slideDirection === 'prev'}
+                    class:slide-in-right={slideDirection === 'next'}
+                />
+            {/key}
 
             <button class="modal-nav modal-prev" on:click={prevModalImage} aria-label="이전 이미지"
                 >‹</button
@@ -297,6 +309,36 @@
         height: 100%;
         object-fit: contain;
         display: block;
+    }
+
+    .modal-image.slide-in-right {
+        animation: slideInFromRight 0.5s ease-out;
+    }
+
+    .modal-image.slide-in-left {
+        animation: slideInFromLeft 0.5s ease-out;
+    }
+
+    @keyframes slideInFromRight {
+        from {
+            transform: translateX(100%);
+            opacity: 1;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideInFromLeft {
+        from {
+            transform: translateX(-100%);
+            opacity: 1;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
     }
 
     .modal-nav {
