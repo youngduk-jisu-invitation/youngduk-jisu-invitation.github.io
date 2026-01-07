@@ -353,6 +353,9 @@
         transition: all 0.2s ease;
         z-index: 1000;
         user-select: none;
+        outline: none;
+        box-shadow: none;
+        -webkit-tap-highlight-color: transparent;
     }
 
     .modal-nav:hover {
