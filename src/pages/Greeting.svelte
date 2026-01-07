@@ -26,7 +26,7 @@
         <p class="greeting-message">
             두 사람의 함께 걸어갈 인생길에
             <br />
-            따뜻한 응원과 축복을 나누어 주시기를 진심으로 부탁드립니다.
+            따뜻한 응원과 축복을 나누어 주시기를 부탁드립니다.
         </p>
 
         <p class="greeting-description">
@@ -104,18 +104,32 @@
     }
 
     .greeting-message {
-        font-size: 14px;
+        font-size: 13px;
         color: #333;
         line-height: 1.8;
         margin: 0;
         max-width: 300px;
+        word-break: keep-all;
+        overflow-wrap: break-word;
     }
 
     .greeting-description {
-        font-size: 13px;
+        font-size: 12px;
         color: #666;
         line-height: 1.6;
         margin: 0;
         max-width: 300px;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+    }
+
+    @media (min-width: 768px) {
+        .greeting-message {
+            font-size: 14px;
+        }
+
+        .greeting-description {
+            font-size: 13px;
+        }
     }
 </style>

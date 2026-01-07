@@ -75,6 +75,8 @@
         font-size: 16px;
         font-weight: 500;
         letter-spacing: 1px;
+        white-space: nowrap;
+        flex-wrap: nowrap;
     }
 
     .groom,

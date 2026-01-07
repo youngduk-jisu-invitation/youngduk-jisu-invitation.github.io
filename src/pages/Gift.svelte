@@ -38,7 +38,9 @@
 
         <div class="gift-info">
             <p class="gift-message">
-                따뜻한 축하의 마음을 전하고 싶으시다면 아래 신랑/신부측을 선택해주세요.
+                따뜻한 축하의 마음을 전하고 싶으시다면
+                <br />
+                아래 신랑/신부측을 선택해주세요.
             </p>
 
             <div class="button-group">
@@ -80,9 +82,7 @@
                 </div>
             {/if}
 
-            <p class="gift-note">
-                계좌 이체 시 송금자명에 신분증상의 이름을 기입하여 주시면 감사하겠습니다.
-            </p>
+            <p class="gift-note">계좌 이체 시 송금자명에 이름을 기입하여 주시면 감사하겠습니다.</p>
         </div>
     </div>
 </section>
@@ -112,7 +112,8 @@
     }
 
     .gift-message {
-        font-size: 13px;
+        text-align: center;
+        font-size: 14px;
         color: #666;
         margin: 0 0 20px 0;
         line-height: 1.6;
@@ -244,15 +245,18 @@
     }
 
     .gift-note {
-        font-size: 12px;
+        font-size: 11px;
         color: #999;
         margin: 0;
         line-height: 1.5;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+        text-align: center;
     }
 
     @media (min-width: 768px) {
-        .gift-content {
-            max-width: 100%;
+        .gift-note {
+            font-size: 12px;
         }
     }
 </style>
