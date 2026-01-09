@@ -16,9 +16,8 @@
             <br />
             사랑은 모든 것을 덮어 주고, 변함없이 항상 믿어 주며, <br />언제 어디서나 소망을 품고,
             모든 것을 견딥니다.
-            <br />
-            (쉬운성경)고린도전서 13장 4~7절
         </p>
+        <p class="scripture-source">(쉬운성경) 고린도전서 13장 4~7절</p>
     </div>
 </section>
 
@@ -55,6 +54,13 @@
         margin: 0;
         word-break: keep-all;
         overflow-wrap: break-word;
+    }
+
+    .scripture-source {
+        font-size: 11px;
+        color: #d4956f;
+        margin: 0;
+        font-weight: 500;
     }
 
     @media (min-width: 768px) {
