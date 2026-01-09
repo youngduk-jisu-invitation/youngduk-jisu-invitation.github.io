@@ -1,4 +1,7 @@
 <script>
+    import naverIcon from '../assets/icons/navermap-icon.png';
+    import kakaoIcon from '../assets/icons/kakao-icon.png';
+    import tmapIcon from '../assets/icons/tmap-icon.png';
 </script>
 
 <section id="schedule" class="section">
@@ -35,7 +38,7 @@
                 rel="noopener noreferrer"
                 class="map-btn naver"
             >
-                <img src="/images/navermap-icon.png" alt="네이버지도 아이콘" class="map-icon" />
+                <img src={naverIcon} alt="네이버지도 아이콘" class="map-icon" />
                 <span>네이버지도</span>
             </a>
             <a
@@ -44,7 +47,7 @@
                 rel="noopener noreferrer"
                 class="map-btn kakao"
             >
-                <img src="/images/kakao-icon.png" alt="카카오네비 아이콘" class="map-icon" />
+                <img src={kakaoIcon} alt="카카오네비 아이콘" class="map-icon" />
                 <span>카카오네비</span>
             </a>
             <a
@@ -53,7 +56,7 @@
                 rel="noopener noreferrer"
                 class="map-btn tmap"
             >
-                <img src="/images/tmap-icon.png" alt="티맵 아이콘" class="map-icon" />
+                <img src={tmapIcon} alt="티맵 아이콘" class="map-icon" />
                 <span>티맵</span>
             </a>
         </div>
