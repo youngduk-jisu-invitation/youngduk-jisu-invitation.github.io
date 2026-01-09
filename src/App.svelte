@@ -2,7 +2,7 @@
     import Header from './components/Header.svelte';
     import MainCover from './pages/MainCover.svelte';
     import Quote from './pages/Quote.svelte';
-    import Greeting from './pages/Greeting.svelte';
+    import Invitation from './pages/Invitation.svelte';
     import Gallery from './pages/Gallery.svelte';
     import Schedule from './pages/Schedule.svelte';
     import Countdown from './pages/Countdown.svelte';
@@ -15,14 +15,14 @@
     let activeSection = 'main';
 
     const sections = [
-        { id: 'main', label: '메인' },
-        { id: 'quote', label: '글귀' },
-        { id: 'greeting', label: '인사말' },
+        { id: 'main', label: '시작' },
+        { id: 'quote', label: '인사말' },
+        { id: 'invitation', label: '초대' },
         { id: 'gallery', label: '갤러리' },
         { id: 'schedule', label: '예식 일시' },
         { id: 'countdown', label: '남은 시간' },
         { id: 'gift', label: '마음 전하실 곳' },
-        { id: 'ending', label: '마무리' },
+        { id: 'ending', label: '감사' },
     ];
 
     function scrollToSection(id) {
@@ -71,7 +71,7 @@
 <main class="container">
     <MainCover />
     <Quote />
-    <Greeting />
+    <Invitation />
     <Gallery />
     <Schedule />
     <Countdown />

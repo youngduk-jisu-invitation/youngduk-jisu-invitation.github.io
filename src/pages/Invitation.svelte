@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<section id="greeting" class="section">
+<section id="invitation" class="section">
     <div class="greeting-content">
         <h2 class="greeting-title">You're Invited!</h2>
 
