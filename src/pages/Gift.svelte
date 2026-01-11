@@ -3,10 +3,10 @@
     let copiedAccount = null;
 
     const giftData = {
-        groom: [
-            { relationship: '신랑', name: '박영덕', account: '하나은행 123-456789-01' },
-            { relationship: '신랑 아버지', name: '박용선', account: '하나은행 123-456789-02' },
-            { relationship: '신랑 어머니', name: '오혜숙', account: '하나은행 123-456789-03' },
+       groom: [
+            { relationship: '신랑', name: '박영덕', account: '신한은행 110-500-695235' },
+            { relationship: '신랑 아버지', name: '박용선', account: '농협은행 302-7389-3535-91' },
+            { relationship: '신랑 어머니', name: '오혜숙', account: '농협은행 356-0947-4525-53' },
         ],
         bride: [
             { relationship: '신부', name: '오지수', account: '우리은행 987-654321-01' },
