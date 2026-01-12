@@ -310,6 +310,7 @@
         padding: 0;
         margin: 0;
         background: rgba(0, 0, 0, 0.85);
+        overflow: hidden;
     }
 
     .modal-overlay::backdrop {
