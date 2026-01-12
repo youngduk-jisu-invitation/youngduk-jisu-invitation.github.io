@@ -56,9 +56,24 @@
         }
     }
 
+    function getValidIndex(index) {
+        return ((index % galleryImages.length) + galleryImages.length) % galleryImages.length;
+    }
+
+    function preloadImage(imageIndex) {
+        const validIndex = getValidIndex(imageIndex);
+        const img = new Image();
+        img.src = galleryImages[validIndex].src;
+    }
+
     function openModal(imageIndex) {
         selectedImageIndex = imageIndex;
         imageKey = imageIndex;
+
+        // 모달 열 때 이전과 이후 이미지만 프리로드
+        preloadImage(imageIndex - 1);
+        preloadImage(imageIndex + 1);
+
         setTimeout(() => modalRef?.showModal(), 0);
     }
 
@@ -70,17 +85,22 @@
     function nextModalImage() {
         if (selectedImageIndex !== null) {
             slideDirection = 'next';
-            selectedImageIndex = (selectedImageIndex + 1) % galleryImages.length;
+            selectedImageIndex = getValidIndex(selectedImageIndex + 1);
             imageKey++;
+
+            // 다음다음 이미지만 프리로드
+            preloadImage(selectedImageIndex + 1);
         }
     }
 
     function prevModalImage() {
         if (selectedImageIndex !== null) {
             slideDirection = 'prev';
-            selectedImageIndex =
-                (selectedImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            selectedImageIndex = getValidIndex(selectedImageIndex - 1);
             imageKey--;
+
+            // 이전이전 이미지만 프리로드
+            preloadImage(selectedImageIndex - 1);
         }
     }
 
