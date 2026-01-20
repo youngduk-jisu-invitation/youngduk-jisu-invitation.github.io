@@ -253,7 +253,7 @@
         height: 100%;
         object-fit: cover;
         object-position: center;
-        transform: scale(1.25);
+        transform: scale(1);
     }
 
     .no-images {
