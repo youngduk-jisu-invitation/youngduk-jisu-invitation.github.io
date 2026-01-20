@@ -4,7 +4,7 @@
 <section id="ending" class="section ending-section">
     <div class="ending-content">
         <div class="ending-image">
-            <img src="/images/gallery/1.jpg" alt="행복한 순간" />
+            <img src="/images/ending-cover/cover2.jpg" alt="행복한 순간" />
         </div>
 
         <h2 class="ending-title">감사합니다</h2>
