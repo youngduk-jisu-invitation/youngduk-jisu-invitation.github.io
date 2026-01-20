@@ -19,7 +19,7 @@
             // public/images/gallery 폴더의 이미지 목록을 동적으로 로드
             // 실제 구현 시 메타데이터 파일이 필요하거나, 서버에서 파일 목록을 제공해야 함
             // 현재는 예시 구조로 설정 (사용자가 이미지 추가 시 업데이트)
-            const imageCount = 27; // 갤러리에 있는 이미지 개수
+            const imageCount = 18; // 갤러리에 있는 이미지 개수
             for (let i = 1; i <= imageCount; i++) {
                 galleryImages.push({
                     id: i,
