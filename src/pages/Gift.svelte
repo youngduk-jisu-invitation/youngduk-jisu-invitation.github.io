@@ -11,7 +11,7 @@
         bride: [
             { relationship: '신부', name: '오지수', account: '우리은행 1002-163-190051' },
             { relationship: '신부 아버지', name: '오종찬', account: '국민은행 337-21-0041-805' },
-            { relationship: '신부 어머니', name: '윤장숙', account: '국민은행 085-21-0543-931' },
+            { relationship: '신부 어머니', name: '윤장숙', account: '농협은행 302-1430-6587-91' },
         ],
     };
 
