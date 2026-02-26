@@ -7,7 +7,7 @@
     };
 
     function calculateTimeLeft() {
-        const weddingDate = new Date('2026-05-30T16:20:00').getTime();
+        const weddingDate = new Date('2026-05-30T07:20:00Z').getTime();
         const now = new Date().getTime();
         const distance = weddingDate - now;
 
