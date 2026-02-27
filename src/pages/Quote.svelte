@@ -87,9 +87,5 @@
         .scripture {
             font-size: 12px;
         }
-
-        .quote-image {
-            max-width: 500px;
-        }
     }
 </style>
