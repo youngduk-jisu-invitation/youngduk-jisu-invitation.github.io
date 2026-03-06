@@ -19,10 +19,10 @@
         </p>
         <p class="scripture-source">(쉬운성경) 고린도전서 13장 4~7절</p>
     </div>
-    /*<div class="quote-image">
-    //    <div class="image-info">
-    //        <img src="/images/quote.jpeg" alt="구절" />
-    //    </div>*/
+    <div class="quote-image">
+        <div class="image-info">
+            <img src="/images/quote.jpeg" alt="구절" />
+        </div>
     </div>
 </section>
 
@@ -69,6 +69,7 @@
     }
     
     .quote-image {
+        display: none;
         width: 100%;
         max-width: 350px;
     }
