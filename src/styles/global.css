@@ -16,7 +16,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-body {
+html, body {
     background-color: transparent;
     color: #333;
     line-height: 1.6;
@@ -34,7 +34,7 @@ body {
 }
 
 @media (prefers-color-scheme: dark) {
-  body {
+  html, body {
     background-color: transparent;
     color: #333;
     line-height: 1.6;
