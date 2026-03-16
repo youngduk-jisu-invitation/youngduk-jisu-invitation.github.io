@@ -18,6 +18,14 @@ body {
     line-height: 1.6;
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #fffefb;
+    color: #333;
+    line-height: 1.6;
+  }
+}
+
 h1,
 h2,
 h3,
