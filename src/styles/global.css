@@ -17,16 +17,38 @@ body {
 }
 
 body {
-    background-color: #fffefb;
+    background-color: transparent;
     color: #333;
     line-height: 1.6;
+    
+    &::before{
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fffefb;
+        z-index: -1;
+    }
 }
 
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: #fffefb;
+    background-color: transparent;
     color: #333;
     line-height: 1.6;
+
+    &::before{
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fffefb;
+        z-index: -1;
+    }
   }
 }
 
