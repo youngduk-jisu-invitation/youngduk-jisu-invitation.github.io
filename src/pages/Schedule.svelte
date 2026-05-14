@@ -15,7 +15,11 @@
 
         <div class="map-preview">
             <picture>
-                <source srcset="/images/location-map.webp" type="image/webp" alt="강동역에서 KDW 웨딩 위치 지도" />
+                <source
+                    srcset="/images/location-map.webp"
+                    type="image/webp"
+                    alt="강동역에서 KDW 웨딩 위치 지도"
+                />
                 <img src="/images/location-map.jpg" alt="강동역에서 KDW 웨딩 위치 지도" />
             </picture>
         </div>
