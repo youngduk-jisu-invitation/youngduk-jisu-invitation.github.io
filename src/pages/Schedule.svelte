@@ -23,6 +23,7 @@
         <div class="location-info">
             <p><strong>주소</strong></p>
             <p>서울 강동구 천호대로 1102 KDW 웨딩 마이더스홀</p>
+            <p class="wreath-notice">(축의 화환은 정중히 사양합니다.)</p>
 
             <p><strong>찾아오는 길</strong></p>
             <p>강동역 3번 출구 바로 앞</p>
@@ -117,6 +118,12 @@
         font-size: 12px;
         color: #666;
         line-height: 1.8;
+    }
+
+    .wreath-notice {
+        font-size: 11px;
+        color: #999;
+        margin: 4px 0 0 0;
     }
 
     .location-info p {

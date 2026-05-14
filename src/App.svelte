@@ -4,6 +4,7 @@
     import Quote from './pages/Quote.svelte';
     import Invitation from './pages/Invitation.svelte';
     import Gallery from './pages/Gallery.svelte';
+    import Notice from './pages/Notice.svelte';
     import Schedule from './pages/Schedule.svelte';
     import Countdown from './pages/Countdown.svelte';
     import Gift from './pages/Gift.svelte';
@@ -19,6 +20,7 @@
         { id: 'quote', label: '인사말' },
         { id: 'invitation', label: '초대' },
         { id: 'gallery', label: '갤러리' },
+        { id: 'notice', label: '안내' },
         { id: 'schedule', label: '예식 일시' },
         { id: 'countdown', label: '남은 시간' },
         { id: 'gift', label: '마음 전하실 곳' },
@@ -73,6 +75,7 @@
     <Quote />
     <Invitation />
     <Gallery />
+    <Notice />
     <Schedule />
     <Countdown />
     <Gift />
