@@ -3,7 +3,7 @@
 
 <section id="notice" class="section">
     <div class="notice-content">
-        <h2 class="notice-title">마음만 감사히 받겠습니다</h2>
+        <h2 class="notice-title">축하의 마음만 감사히 받겠습니다</h2>
 
         <div class="notice-body">
             <p>
