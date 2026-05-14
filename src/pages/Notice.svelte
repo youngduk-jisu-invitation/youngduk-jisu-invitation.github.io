@@ -3,7 +3,7 @@
 
 <section id="notice" class="section">
     <div class="notice-content">
-        <h2 class="notice-title">축하의 마음만 감사히 받겠습니다</h2>
+        <h2 class="notice-title">축하의 마음만 <br class="mobile-br" />감사히 받겠습니다</h2>
 
         <div class="notice-body">
             <p>
@@ -41,6 +41,16 @@
         color: #333;
         margin: 0;
         letter-spacing: 1px;
+    }
+
+    .notice-title :global(.mobile-br) {
+        display: none;
+    }
+
+    @media (max-width: 480px) {
+        .notice-title :global(.mobile-br) {
+            display: inline;
+        }
     }
 
     .notice-body {
