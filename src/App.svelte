@@ -16,7 +16,7 @@
     let activeSection = 'main';
 
     const sections = [
-        { id: 'main', label: '시작' },
+        { id: 'main', label: 'YOUNGDUK & JISU' },
         { id: 'quote', label: '인사말' },
         { id: 'invitation', label: '초대' },
         { id: 'gallery', label: '갤러리' },
@@ -24,7 +24,7 @@
         { id: 'schedule', label: '예식 일시' },
         { id: 'countdown', label: '남은 시간' },
         { id: 'gift', label: '마음 전하실 곳' },
-        { id: 'ending', label: '감사' },
+        { id: 'ending', label: '맺는 말' },
     ];
 
     function scrollToSection(id) {
