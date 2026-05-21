@@ -10,7 +10,19 @@
 
         <div class="schedule-info">
             <p class="date">2026년 05월 30일 (토) 오후 4시 20분</p>
-            <p class="venue">KDW 웨딩 마이더스홀</p>
+            <p class="venue">KDW 웨딩 3층script>
+    import naverIcon from '../assets/icons/navermap-icon.png';
+    import kakaoIcon from '../assets/icons/kakao-icon.png';
+    import tmapIcon from '../assets/icons/tmap-icon.png';
+</script>
+
+<section id="schedule" class="section">
+    <div class="schedule-content">
+        <h2 class="schedule-title">예식 일시</h2>
+
+        <div class="schedule-info">
+            <p class="date">2026년 05월 30일 (토) 오후 4시 20분</p>
+            <p class="venue">KDW 웨딩 3층 마이더스홀</p>
         </div>
 
         <div class="map-preview">
